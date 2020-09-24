@@ -9,7 +9,7 @@
               <div class="card">
               
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Add Category of freelancer</h4>
+                  <h4 class="card-title ">Edit Category of freelancer</h4>
              
                 </div>
                 <div class="card-body">
@@ -18,8 +18,9 @@
 
                    
                     <table class="table">
-                    <form method="post" action="{{url('freelancerCategories', [$skill->id])}}" class="form-control">
-                    <input type="hidden" name="_method" value="PUT">
+                    <form method="post" action="{{route('Skills.update',$skill->id) }}" class="form-control">
+                   
+                    @method('PATCH')
                     @csrf
                     <thead class=" text-primary">
                         <th>
@@ -40,23 +41,25 @@
                        
                       </thead>
                       <tbody>
-                      
+             
+                      <tr>
                         <td>
-                          <input type="text" class="form-control"  name="{{$skill->skill_master}}" placeholder="Master Skill Name">
+                          <input type="text" class="form-control"  name="master_skill" value="{{$skill->skill_master}}" placeholder="Master Skill Name">
                         </td>
                         <td>
-                          <input type="text" class="form-control" name="{{$skill->skill}}" placeholder="Sub Skill Name">
+                          <input type="text" class="form-control" name="sub_skill" value="{{$skill->skill}}" placeholder="Sub Skill Name">
                         </td>
                         <td>
-                          <input type="file" class="form-control" name="{{$skill->image}}">
+                          <input type="file" class="form-control" name="image" value="{{$skill->image}}">
                         </td>
                         <td>
-                          <input type="text" class="form-control" placeholder="Description" name="{{$skill->discription}}">
+                          <input type="text" class="form-control" placeholder="Description" name="description" value="{{$skill->discription}}">
                         </td>
                         <td>
-                        <a href="{{url('freelancerCategories')}}" class="btn btn-primary btn-round">Add</a>
+                        <button type="submit" class="btn btn-primary btn-round">Edit</button>
                         </td>
-                       
+                       </tr>
+                    
                       </tbody>
                       </form>
                     </table>

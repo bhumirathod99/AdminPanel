@@ -42,9 +42,27 @@
             </a>
           </li>
           <li class="nav-item ">
+            <a class="nav-link" href="{{url('user')}}">
+              <i class="material-icons">content_paste</i>
+              <p>Users</p>
+            </a>
+          </li>
+          <li class="nav-item ">
             <a class="nav-link" href="{{url('freelancerCategories')}}">
               <i class="material-icons">content_paste</i>
               <p>Freelancer Categories</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{{url('projects')}}">
+              <i class="material-icons">content_paste</i>
+              <p>Projects</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{{url('competition')}}">
+              <i class="material-icons">content_paste</i>
+              <p>Competitions</p>
             </a>
           </li>
           <!-- your sidebar here -->

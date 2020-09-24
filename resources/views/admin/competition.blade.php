@@ -4,12 +4,12 @@
 <div class="container-fluid">
 
           <div class="row">
-          <a href="{{ route('Skills.create') }}" class="btn btn-primary btn-round">Add New Category</a>
+         
             <div class="col-md-12">
               <div class="card">
               
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Categories of freelancer</h4>
+                  <h4 class="card-title ">List of Competitions</h4>
              
                 </div>
                 <div class="card-body">
@@ -23,45 +23,39 @@
                       <thead class=" text-primary">
                       <tr>
                         <th>
-                          ID
+                        ID
                         </th>
                         <th>
-                         Master Skill
+                        User ID
                         </th>
                         <th>
-                         Sub Skill 
+                        Project ID 
                         </th>
                         <th>
-                        Image
+                        Competition Name
                         </th>
                         <th>
-                        Description
+                        Commpetition Description
                         </th>
                         <th>
-                        Action
+                        Registration Deadline
+                        </th>
+                        <th>
+                        Submission Deadline
                         </th>
                        </tr>
                       </thead>
                       <tbody>
-                      @php
-                          $i = 0;
-                      @endphp
-                          @foreach ($skills as $skill)
+                      
+                          @foreach ($competition as $competitions)
                           <tr>
-                            <td>{{ ++$i }}</td>
-                            <td>{{ $skill->skill_master }}</td>
-                            <td>{{ $skill->skill }}</td>
-                            <td>{{ $skill->image }}</td>
-                            <td>{{ $skill->discription }}</td>
-                            <td>
-                            <a class="btn btn-primary btn-round" href="{{ route('Skills.edit',$skill->id) }}">Edit</a>
-                            <form action="{{ route('Skills.destroy',$skill->id) }}" method="POST">
-                               
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-primary btn-round">Delete</button>
-                            </form>
-                            </td>
+                            <td>{{ $competitions->id }}</td>
+                            <td>{{ $competitions->user_id }}</td>
+                            <td>{{ $competitions->pro_id }}</td>
+                            <td>{{ $competitions->competition_name }}</td>
+                            <td>{{ $competitions->comptetion_des }}</td>
+                            <td>{{ $competitions->reg_deadline }}</td>
+                            <td>{{ $competitions->submission_deadline }}
                             </tr>  
                           @endforeach
                       

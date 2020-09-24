@@ -14,18 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.adminPanel');
 });
 
-Route::get('/admin','AdminController@index');
-Route::get('/freelancerCategories','AdminController@freelancerCategories');
-Route::get('/create','SkillsController@create');
-Route::get('/Skills', 'SkillsController@index');
-Route::get('/edit/Skills/{id}','SkillsController@edit');
-Route::get('/update/Skills/{id}','SkillsController@update');
-Route::delete('/delete/Skills/{id}','SkillsController@destroy');
-
+Route::get('/freelancerCategories','SkillsController@index');
+Route::get('/competition', 'CompetitionController@index');
+Route::get('/user', 'UserController@index');
+Route::get('/projects', 'ProjectsController@index');
+//Route::get('/createCategories','SkillsController@create');
+Route::resource('Projects', 'ProjectsController');
+Route::resource('User', 'UserController');
 Route::resource('Skills', 'SkillsController');
+Route::resource('Competition', 'CompetitionController');
 
 
 

@@ -4,12 +4,12 @@
 <div class="container-fluid">
 
           <div class="row">
-          <a href="{{ route('Skills.create') }}" class="btn btn-primary btn-round">Add New Category</a>
+         
             <div class="col-md-12">
               <div class="card">
               
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Categories of freelancer</h4>
+                  <h4 class="card-title ">List of Users</h4>
              
                 </div>
                 <div class="card-body">
@@ -23,45 +23,43 @@
                       <thead class=" text-primary">
                       <tr>
                         <th>
-                          ID
+                        ID
                         </th>
                         <th>
-                         Master Skill
+                        First Name
                         </th>
                         <th>
-                         Sub Skill 
+                        Last Name
+                        </th>
+                        <th>
+                        Email 
+                        </th>
+                        <th>
+                        Password
+                        </th>
+                        <th>
+                        Mobile No.
+                        </th>
+                        <th>
+                        Address
                         </th>
                         <th>
                         Image
                         </th>
-                        <th>
-                        Description
-                        </th>
-                        <th>
-                        Action
-                        </th>
                        </tr>
                       </thead>
                       <tbody>
-                      @php
-                          $i = 0;
-                      @endphp
-                          @foreach ($skills as $skill)
+                      
+                          @foreach ($user as $users)
                           <tr>
-                            <td>{{ ++$i }}</td>
-                            <td>{{ $skill->skill_master }}</td>
-                            <td>{{ $skill->skill }}</td>
-                            <td>{{ $skill->image }}</td>
-                            <td>{{ $skill->discription }}</td>
-                            <td>
-                            <a class="btn btn-primary btn-round" href="{{ route('Skills.edit',$skill->id) }}">Edit</a>
-                            <form action="{{ route('Skills.destroy',$skill->id) }}" method="POST">
-                               
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-primary btn-round">Delete</button>
-                            </form>
-                            </td>
+                            <td>{{ $users->id }}</td>
+                            <td>{{ $users->fname }}</td>
+                            <td>{{ $users->lname }}</td>
+                            <td>{{ $users->email }}</td>
+                            <td>{{ $users->password }}</td>
+                            <td>{{ $users->mobile_number }}</td>
+                            <td>{{ $users->address }}</td>
+                            <td>{{ $users->image }}
                             </tr>  
                           @endforeach
                       

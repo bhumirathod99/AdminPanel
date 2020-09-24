@@ -53,7 +53,7 @@
                           <input type="text" class="form-control" placeholder="Description" name="description">
                         </td>
                         <td>
-                        <a href="{{route('Skills.store')}}" class="btn btn-primary btn-round">Add</a>
+                        <button type="submit" class="btn btn-primary btn-round">Add</button>
                         </td>
                        
                       </tbody>
