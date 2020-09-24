@@ -18,10 +18,10 @@
 
                    
                     <table class="table">
-                    <form method="post" action="{{route('Skills.update',$skill->id) }}" class="form-control">
-                   
-                    @method('PATCH')
+                    <form method="post" action="{{ route('Skills.update',$skill->id) }}" class="form-control">
                     @csrf
+                    @method('PATCH')
+                    
                     <thead class=" text-primary">
                         <th>
                          Master Skill
@@ -43,6 +43,7 @@
                       <tbody>
              
                       <tr>
+
                         <td>
                           <input type="text" class="form-control"  name="master_skill" value="{{$skill->skill_master}}" placeholder="Master Skill Name">
                         </td>
@@ -56,7 +57,7 @@
                           <input type="text" class="form-control" placeholder="Description" name="description" value="{{$skill->discription}}">
                         </td>
                         <td>
-                        <button type="submit" class="btn btn-primary btn-round">Edit</button>
+                        <button type="submit" class="btn btn-primary btn-round">Update</button>
                         </td>
                        </tr>
                     

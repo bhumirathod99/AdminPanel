@@ -37,24 +37,24 @@
                         <th>
                         Description
                         </th>
-                        <th>
+                        <th colspan="2">
                         Action
                         </th>
                        </tr>
                       </thead>
                       <tbody>
-                      @php
-                          $i = 0;
-                      @endphp
+                      
                           @foreach ($skills as $skill)
                           <tr>
-                            <td>{{ ++$i }}</td>
+                            <td>{{ $skill->id }}</td>
                             <td>{{ $skill->skill_master }}</td>
                             <td>{{ $skill->skill }}</td>
                             <td>{{ $skill->image }}</td>
                             <td>{{ $skill->discription }}</td>
+                            <td><a class="btn btn-primary btn-round" href="{{ route('Skills.edit',$skill->id) }}">Edit</a></td>
+                            
                             <td>
-                            <a class="btn btn-primary btn-round" href="{{ route('Skills.edit',$skill->id) }}">Edit</a>
+                      
                             <form action="{{ route('Skills.destroy',$skill->id) }}" method="POST">
                                
                                 @csrf
@@ -62,6 +62,8 @@
                                 <button type="submit" class="btn btn-primary btn-round">Delete</button>
                             </form>
                             </td>
+                            
+                            
                             </tr>  
                           @endforeach
                       

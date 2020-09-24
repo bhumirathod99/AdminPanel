@@ -23,7 +23,7 @@
       Tip 2: you can also add an image using data-image tag
   -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="#" class="simple-text logo-normal">
           The Creative
         </a>
       </div>
@@ -45,6 +45,12 @@
             <a class="nav-link" href="{{url('user')}}">
               <i class="material-icons">content_paste</i>
               <p>Users</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{{url('freelancers')}}">
+              <i class="material-icons">content_paste</i>
+              <p>Freelancers</p>
             </a>
           </li>
           <li class="nav-item ">

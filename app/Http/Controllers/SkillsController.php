@@ -40,9 +40,11 @@ class SkillsController extends Controller
         return view('admin.freelancerCategories',compact('skill'));
     }
 
-    public function edit(Skills $skill)
+    public function edit(Request $request, $id)
     {
-        
+        $skill = $request->input();
+        $skill = Skills::findOrFail($id);
+       
         return view('admin.editCategories',compact('skill'));
     }
 
@@ -52,16 +54,17 @@ class SkillsController extends Controller
         $skill = Skills::find($id);
         $skill->skill_master = $request->get('master_skill');
         $skill->skill = $request->get('sub_skill');
-        $skill->image=$request->get('image');
+        $skill->image = $request->get('image');
         $skill->discription=$request->get('description');
         $skill->update();
+        
         return redirect('/freelancerCategories');
        
     }
 
-    public function destroy(Skills $skill)
+    public function destroy(Skills $skill, $id)
     {
-        //$skill = Student::find($id);
+        $skill = Skills::find($id);
         $skill->delete();
         return redirect('/freelancerCategories');
      
